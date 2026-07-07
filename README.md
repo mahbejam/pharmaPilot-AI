@@ -84,3 +84,17 @@ Single self-contained HTML file. Vanilla JS, no framework, no external libraries
 This is a stand-alone concept demo with scripted conversations and mock data. It is not connected to, derived from, or affiliated with any real manufacturing system, product, or company. All batch numbers, materials, quantities, and process steps are invented.
 
 Possible next steps: connect the chat to a real LLM, add a rules engine for state detection, and expand the exception library.
+
+## Screenshots
+
+### Dashboard Overview
+![Dashboard Overview](./images/dashboard-overview.png)
+
+### AI Copilot Chat
+![AI Copilot Chat](./images/ai-copilot-chat.png)
+
+### Deviation Investigation
+![Deviation Investigation](./images/deviation-investigation.png)
+
+### Batch Details
+![Batch Details](./images/batch-details.png)
