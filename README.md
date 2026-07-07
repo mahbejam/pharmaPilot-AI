@@ -1,6 +1,6 @@
-# BatchPilot
+# PharmaPilot AI
 
-A concept demo of an AI assistant that sits next to the execution system during a **visual inspection batch** — and helps the operator when something small goes sideways.
+AI-powered copilot for pharmaceutical batch documentation, deviation management, and human error investigation.
 
 **Try it:** open `index.html` in a browser. No build, no dependencies, no backend.
 
