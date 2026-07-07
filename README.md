@@ -3,6 +3,9 @@
 AI-powered copilot for pharmaceutical batch documentation, deviation management, and human error investigation.
 
 **Try it:** open `index.html` in a browser. No build, no dependencies, no backend.
+## 🌐 Live Demo
+
+Demo: https://mahbejam.github.io/pharmaPilot-AI/
 
 ## Why this exists
 
