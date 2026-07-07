@@ -7,6 +7,14 @@ AI-powered copilot for pharmaceutical batch documentation, deviation management,
 
 Demo: https://mahbejam.github.io/pharmaPilot-AI/
 
+## 🚨 The Problem
+
+In pharmaceutical manufacturing, operators often need to document deviations, human errors, and batch-related incidents while production is still running.
+
+Paper-based documentation, manual investigations, and disconnected systems make this process slow, error-prone, and difficult to track.
+
+As a result, valuable production time is lost and investigations become more complex than necessary.
+
 ## Why this exists
 
 Anyone who has run an inspection line knows the moment: the batch is running, syringes are flowing through the machine, and then you realize the AQL tab was never scanned. Or the eject counts don't match the trays. Or the final reconciliation is 18 units short and the shift ends in twenty minutes.
