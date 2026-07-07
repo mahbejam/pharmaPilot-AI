@@ -14,6 +14,13 @@ In pharmaceutical manufacturing, operators often need to document deviations, hu
 Paper-based documentation, manual investigations, and disconnected systems make this process slow, error-prone, and difficult to track.
 
 As a result, valuable production time is lost and investigations become more complex than necessary.
+## 💡 The Solution
+
+PharmaPilot AI acts as an intelligent copilot that assists operators during batch execution.
+
+Instead of replacing existing manufacturing systems, it supports operators by documenting events, organizing information, guiding investigations, and reducing the time required to resolve production deviations.
+
+The goal is to improve traceability, reduce manual effort, and help teams focus on production rather than paperwork.
 
 ## Why this exists
 
