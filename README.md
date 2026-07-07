@@ -22,6 +22,17 @@ Instead of replacing existing manufacturing systems, it supports operators by do
 
 The goal is to improve traceability, reduce manual effort, and help teams focus on production rather than paperwork.
 
+## ⭐ Key Features
+
+- AI-assisted batch documentation
+- Deviation reporting
+- Human error investigation support
+- Batch timeline visualization
+- Interactive production dashboard
+- Zero installation (runs directly in the browser)
+- Clean pharmaceutical-inspired UI
+- Static demo for portfolio presentation
+
 ## Why this exists
 
 Anyone who has run an inspection line knows the moment: the batch is running, syringes are flowing through the machine, and then you realize the AQL tab was never scanned. Or the eject counts don't match the trays. Or the final reconciliation is 18 units short and the shift ends in twenty minutes.
