@@ -99,10 +99,14 @@ Possible next steps: connect the chat to a real LLM, add a rules engine for stat
 ### Batch Details
 ![Batch Details](./images/batch-details.png)
 
-## Credits
+## 👩‍💻 Author
 
-Original idea and product concept by Mahbubeh.
+Mahbube Bejam
+Software Developer — healthcare & pharma digitalization,
+AI-assisted workflows, and modern web applications.
+Background in pharmaceutical visual inspection operations —
+this project is built from first-hand production floor experience.
 
-Designed and developed by Mahbube bejam.
+- GitHub: [@mahbejam](https://github.com/mahbejam)
 
-This project was created as part of a software engineering portfolio focused on healthcare, pharma workflows and AI-assisted digitalization.
+⭐ If you find this project useful, consider giving it a star.
