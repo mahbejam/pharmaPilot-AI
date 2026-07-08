@@ -1,112 +1,101 @@
-# PharmaPilot AI
+# 💊 PharmaPilot AI
 
-AI-powered copilot for pharmaceutical batch documentation, deviation management, and human error investigation.
+> An AI copilot for pharmaceutical visual inspection (Sichtkontrolle) — guiding batch workflows, reconciling quantities, and explaining discrepancies in plain language.
 
-**Try it:** open `index.html` in a browser. No build, no dependencies, no backend.
-## 🌐 Live Demo
+![Status](https://img.shields.io/badge/status-MVP-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Domain](https://img.shields.io/badge/domain-Pharma%20%2F%20GMP-blue)
 
-Demo: https://mahbejam.github.io/pharmaPilot-AI/
+---
 
-## 🚨 The Problem
+## Overview
 
-In pharmaceutical manufacturing, operators often need to document deviations, human errors, and batch-related incidents while production is still running.
+Visual inspection is one of the most demanding steps in sterile pharmaceutical production. Operators work under time pressure, every unit must be accounted for, and a single unbooked AQL sample can turn into a deviation and hours of investigation.
 
-Paper-based documentation, manual investigations, and disconnected systems make this process slow, error-prone, and difficult to track.
+**PharmaPilot AI** is a prototype of a digital assistant for exactly this environment. It walks through a batch from receipt to release checklist, keeps a **live quantity reconciliation (Menge)** running in the background, and when the numbers don't balance, the built-in AI copilot explains *why* — before it becomes a deviation.
 
-As a result, valuable production time is lost and investigations become more complex than necessary.
-## 💡 The Solution
+> Designed by a software engineer who went into GMP production deliberately — to study these workflows where they actually happen, and to build software that solves real problems, not imagined ones. Every scenario in this demo — the forgotten AQL scan, the eject booked to the wrong category, the count that doesn't balance at shift end — comes from direct process observation on the production floor.
 
-PharmaPilot AI acts as an intelligent copilot that assists operators during batch execution.
+## 🖼️ Screenshots
 
-Instead of replacing existing manufacturing systems, it supports operators by documenting events, organizing information, guiding investigations, and reducing the time required to resolve production deviations.
+<!-- keep your existing screenshots section as it is -->
 
-The goal is to improve traceability, reduce manual effort, and help teams focus on production rather than paperwork.
+**[▶️ Live Demo](https://mahbejam.github.io/pharmaPilot-AI/)**
 
-## ⭐ Key Features
+## ✨ Key Features
 
-- AI-assisted batch documentation
-- Deviation reporting
-- Human error investigation support
-- Batch timeline visualization
-- Interactive production dashboard
-- Zero installation (runs directly in the browser)
-- Clean pharmaceutical-inspired UI
-- Static demo for portfolio presentation
+### Guided batch workflow
+A step-by-step checklist covering the full inspection lifecycle — batch takeover from filling, material verification, machine setup, automated inspection run, Muster & AQL sampling, manual re-inspection, 100% manual control, label & barcode verification, quantity reconciliation, and batch record review — with live status tracking.
 
-## Why this exists
+### Live quantity reconciliation (Menge)
+The core formula of every inspection batch, always visible and always up to date:
 
-Anyone who has run an inspection line knows the moment: the batch is running, syringes are flowing through the machine, and then you realize the AQL tab was never scanned. Or the eject counts don't match the trays. Or the final reconciliation is 18 units short and the shift ends in twenty minutes.
+```
+received = good + ejects + samples + breakage
+```
 
-None of these are big problems. But each one means stopping, working out what state the system is in, fixing it manually, and writing it up — while the line keeps running.
+The panel tracks input units, good/labelled units, eject categories (physical defects → Re-Sicht, particle/liquid → Re-Sicht, uncertain → rails), AQL and Muster samples — and flags **unbooked removals** the moment a delta appears.
 
-BatchPilot explores a simple idea: **what if an assistant watched the batch with you and handled the small stuff?** Not replacing the execution system, not making decisions for you — just cutting the time between "something's off" and "it's fixed and documented."
+### AI copilot with realistic production scenarios
+A conversational assistant that understands the context of the running batch. Example from the demo:
 
-## The process it models
+> *"The system prompted an AQL sample of 125 units from the good stream, and the quantity balance shows Δ −125 unaccounted. That usually means the units were taken but the AQL tab wasn't scanned. Sound familiar?"*
 
-The demo simulates a visual inspection batch of prefilled syringes, start to finish:
+Built-in quick diagnoses for the most common real-world discrepancies:
+- I forgot to scan the AQL tab
+- Ejects booked to the wrong category
+- I forgot to switch the eject mode
+- Wrong material at the machine
+- The final count doesn't balance
 
-1. Batch takeover from filling (24,000 units received)
-2. Material verification — Ringcode reel, label reels, format parts
-3. Machine setup — recipe and eject mode
-4. Automated inspection — good units are labelled; defects are ejected into three streams: physical defects and particle/liquid defects go to manual re-inspection, uncertain units go to 100% manual control (rails 4–6)
-5. Muster & AQL sampling, prompted by the system, always taken from the good stream
-6.–8. Re-inspection, 100% control, label verification
-9. Quantity reconciliation: received = good + ejects + samples + machine breakage
-10. Batch record review
+### Batch record review
+A release checklist that mirrors how batch records are reviewed before release — designed with GMP documentation principles (ALCOA+) in mind.
 
-A **live reconciliation panel** tracks every category and shows the balance (Δ) at all times — because in the end, the numbers have to close.
+## 🛠️ Tech Stack
 
-## What the assistant can do
+- **Frontend:** Single-file HTML / CSS / JavaScript — zero dependencies, runs anywhere
+- **Design:** Industrial MES-inspired UI, optimized for shop-floor readability
+- **Data:** Mock batch data for demonstration purposes
 
-Five situations are built in, all taken from real operator life:
+## 🚀 Getting Started
 
-- **Missed AQL tab scan.** The units left the good stream but were never booked, so the balance shows Δ −125. The original tab is glued into the batch record — so the assistant issues a replacement tab with a **real, scannable Code 128 barcode** rendered on screen. Scan it, the booking lands, the balance closes.
-- **Ejects booked to the wrong category.** 60 physical defects booked as particle — the assistant explains why this is a rebooking rather than a deviation, and corrects it.
-- **Forgotten eject mode.** A rework run started in normal mode; the assistant walks through the safe way back and documents it with timestamps.
-- **Wrong material at the machine.** A rejected reel scan — the assistant points to the correct lot and notes what happened in one sentence.
-- **Final count doesn't balance.** The assistant works through the categories, finds the unbooked machine breakage, and closes the reconciliation. And if the AQL issue is still open, it's smart enough to say "part of this delta is that — let's fix it first."
+```bash
+git clone https://github.com/mahbejam/pharmaPilot-AI.git
+cd pharmaPilot-AI
+# open index.html in your browser — no build step, no install
+```
 
-In every case the assistant **drafts** documentation — the operator confirms it. It reads system state; it never writes around it.
+## 📌 Project Status & Roadmap
 
-## Design principles
+This is an MVP demonstrating the core concept. Planned next steps:
 
-- The execution system stays the single source of truth. The assistant is a layer next to it, not inside it.
-- Every action is proposed, never executed silently. The operator confirms.
-- Documentation is drafted at the moment the issue happens, not reconstructed at the end of the shift.
-- The quantity balance is always visible — reconciliation shouldn't be a surprise at batch end.
+- Connect the chat to a real LLM
+- Rules engine for automatic state detection
+- Expanded exception library
+- Persistent batch history (localStorage → small backend)
+- Shift handover summary generated by the AI copilot
+- Deviation pre-report drafting from reconciliation deltas
+- German / English interface toggle
 
-## Tech
+## ⚠️ Disclaimer
 
-Single self-contained HTML file. Vanilla JS, no framework, no external libraries. The barcode is a from-scratch Code 128B encoder (~25 lines) rendered as SVG — point a handheld scanner or a phone at the screen and it reads. The quantity model is checked so that every scenario path reconciles to Δ 0.
-
-## Status & disclaimer
-
-This is a stand-alone concept demo with scripted conversations and mock data. It is not connected to, derived from, or affiliated with any real manufacturing system, product, or company. All batch numbers, materials, quantities, and process steps are invented.
-
-Possible next steps: connect the chat to a real LLM, add a rules engine for state detection, and expand the exception library.
-
-## Screenshots
-
-### Dashboard Overview
-![Dashboard Overview](./images/dashboard-overview.png)
-
-### AI Copilot Chat
-![AI Copilot Chat](./images/ai-copilot-chat.png)
-
-### Deviation Investigation
-![Deviation Investigation](./images/deviation-investigation.png)
-
-### Batch Details
-![Batch Details](./images/batch-details.png)
+PharmaPilot AI is a **frontend prototype using mock data only**. It is not affiliated with any real manufacturing system, product, or company. All batch numbers, materials, quantities, and process steps are invented. Built for demonstration and portfolio purposes.
 
 ## 👩‍💻 Author
 
-Mahbube Bejam
-Software Developer — healthcare & pharma digitalization,
-AI-assisted workflows, and modern web applications.
-Background in pharmaceutical visual inspection operations —
-this project is built from first-hand production floor experience.
+**Mahbube Bejam**
+Software Developer (B.Sc. Software Engineering) — building AI-assisted
+tools for pharma and healthcare digitalization.
+
+This project is based on deep first-hand insight into GMP production
+processes — I went into the industry to study these workflows where
+they actually happen, in order to design software that solves real
+problems, not imagined ones.
 
 - GitHub: [@mahbejam](https://github.com/mahbejam)
 
 ⭐ If you find this project useful, consider giving it a star.
+
+## 📄 License
+
+MIT — free to use, modify, and build on.
