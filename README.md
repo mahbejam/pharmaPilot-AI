@@ -18,6 +18,18 @@ Visual inspection is one of the most demanding steps in sterile pharmaceutical p
 
 ## 🖼️ Screenshots
 
+### Dashboard Overview
+![Dashboard Overview](images/dashboard-overview.png)
+
+### Batch Details & Process Steps
+![Batch Details](images/batch-details.png)
+
+### AI Copilot Chat
+![AI Copilot Chat](images/ai-copilot-chat.png)
+
+### Deviation Investigation
+![Deviation Investigation](images/deviation-investigation.png)
+
 <!-- keep your existing screenshots section as it is -->
 
 **[▶️ Live Demo](https://mahbejam.github.io/pharmaPilot-AI/)**
